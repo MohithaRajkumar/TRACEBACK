@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TRACEBACK | Campus Lost & Found</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">TRACE<span>BACK</span><small> CAMPUS INTELLIGENCE</small></a>
+    <span class="live"><i></i> SYSTEM ONLINE</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">CAMPUS LOST & FOUND PORTAL</p>
+        <h1>Lost something?<br><span>Let's bring it back.</span></h1>
+        <p class="intro">One campus. Many stories. A smarter way to reconnect people with their belongings.</p>
+        <a class="btn" href="#report">Report an item ↓</a>
+      </div>
+      <div class="hero-art">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="hero-icon">⌕</div>
+        <span class="floating float-one">ID CARD</span>
+        <span class="floating float-two">FOUND ✓</span>
+        <span class="floating float-three">MATCH FOUND</span>
+      </div>
+    </section>
+
+    <section class="stats">
+      <article><span>📋</span><p>Total reports</p><h2 id="totalCount">0</h2></article>
+      <article><span>🔎</span><p>Lost items</p><h2 id="lostCount">0</h2></article>
+      <article><span>🤝</span><p>Found items</p><h2 id="foundCount">0</h2></article>
+      <article><span>✓</span><p>Resolved</p><h2 id="resolvedCount">0</h2></article>
+    </section>
+
+    <section class="panel" id="report">
+      <div class="heading">
+        <div><p class="eyebrow">01 / SUBMIT</p><h2>Make a report</h2></div>
+        <span class="tag">FREE · CAMPUS USE</span>
+      </div>
+      <form id="reportForm">
+        <div class="form-grid">
+          <label>Report type
+            <select id="type" required>
+              <option value="lost">I lost an item</option>
+              <option value="found">I found an item</option>
+            </select>
+          </label>
+          <label>Item name
+            <input id="itemName" maxlength="60" placeholder="e.g. Blue water bottle" required>
+          </label>
+          <label>Category
+            <select id="category" required>
+              <option value="Electronics">Electronics</option>
+              <option value="ID / Cards">ID / Cards</option>
+              <option value="Bags">Bags</option>
+              <option value="Books">Books</option>
+              <option value="Accessories">Accessories</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+          <label>Colour
+            <input id="colour" maxlength="30" placeholder="e.g. Blue" required>
+          </label>
+          <label>Location
+            <input id="location" maxlength="80" placeholder="e.g. Library" required>
+          </label>
+          <label>Date
+            <input id="date" type="date" required>
+          </label>
+        </div>
+        <label>Description
+          <textarea id="description" maxlength="300" placeholder="Add identifying details (optional)"></textarea>
+        </label>
+        <button class="btn" type="submit">Submit report ↗</button>
+        <p id="formMessage" role="status"></p>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="heading">
+        <div><p class="eyebrow">02 / DISCOVER</p><h2>Item directory</h2></div>
+        <span class="tag">LIVE FILTERS</span>
+      </div>
+      <div class="filters">
+        <input id="search" placeholder="Search name, colour or location...">
+        <select id="filterType">
+          <option value="all">All reports</option>
+          <option value="lost">Lost only</option>
+          <option value="found">Found only</option>
+        </select>
+      </div>
+      <div id="matches" class="match-box" hidden></div>
+      <div id="itemList" class="item-grid"></div>
+      <p id="emptyMessage" class="empty">No reports yet. Add a report to get started.</p>
+    </section>
+
+    <footer>TRACEBACK © 2026 · Built for a smarter campus.</footer>
+  </main>
+</body>
+</html>
